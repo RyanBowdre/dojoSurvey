@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dojo_form</title>
+
+    <style>
+
+      .form{
+        vertical-align: top;
+      }
+      label{
+        display: block;
+      }
+      form, fieldset{
+        display: inline;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <h1>TIME FOR THE DOJO</h1>
+<div class="form">
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{message}}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form action='/result' method='post'>
+  <fieldset>
+    <legend>Contact Form</legend>
+    <label>
+      Name: <input type="text" name="name">
+    </label>
+    <br>
+    <label>
+      Email: <input type="text" name="email_info">
+    </label>
+    <br>
+     <label>
+      Description: <textarea name="description" placeholder="Enter Description"></textarea>
+    </label>
+    <br>
+    <input type="submit" value="Create User">
+  </fieldset>
+</form>
+	</div>
+
+
+</body>
+</html>
